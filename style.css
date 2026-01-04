@@ -1,0 +1,158 @@
+
+:root {
+    --bg: rgb(35, 35, 35);
+    --text: rgb(255, 255, 255);
+    --accent: rgb(0, 202, 17);
+    --title: aqua;
+    --button: rgb(0, 136, 169);
+    --button_bg: rgb(0, 136, 169, 0.8);
+    --content: rgb(43, 226, 128);
+    --glass: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg);
+    padding: 20px;
+    color: var(--text);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+}
+
+.section {
+    padding: 70px 0;
+}
+
+.nav_glass {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: sticky;
+    top: 20px;
+    background: var(--glass);
+    box-shadow: 0 25px 45px rgb(0, 0, 0, 0.2);
+    border-radius: 30px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-right: 2px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 20px 24px;
+}
+
+.main_title {
+    color: var(--title);
+    margin-left: 50px;
+    letter-spacing: 0.5px;
+}
+
+nav {
+    margin: 0 auto;
+}
+
+.nav_anchors {
+    list-style: none;
+    display: flex;
+    gap: 36px;
+    align-items: center;
+}
+
+.nav_anchors a {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text);
+    text-decoration: none;
+    display: inline-block;
+    padding: 4px 8px;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease 0;
+}
+
+.nav_anchors a:hover {
+    color: var(--accent);
+}
+
+button {
+    padding: 9px 25px;
+    background-color: var(--button);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    color: var(--text);
+    font-weight: 500;
+    transition: all 0.3s ease 0;
+}
+
+button:hover {
+    background-color: var(--button_bg);
+}
+
+.contact {
+    margin-right: 50px;
+}
+
+.contact button {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 14px;
+    letter-spacing: 0.5px;
+}
+
+.content {
+    max-width: 100ch;
+    margin: 0 auto;
+}
+
+.content p {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--content);
+    line-height: 1.6;
+    margin-top: 14px;
+    text-align: center;
+    letter-spacing: 0.3px;
+}
+
+.content a {
+    color: var(--text);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.content a:hover {
+    color: var(--accent);
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+}
+
+.personal_photo img {
+    width: 350px;
+    height: 400px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 32px;
+    border: 6px solid #370000;
+    box-shadow: 0 25px 45px rgb(0, 0, 0, 0.4);
+}
