@@ -46,6 +46,7 @@ body {
     backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 24px;
     padding: 20px 24px;
 }
@@ -155,4 +156,41 @@ img {
     margin-top: 32px;
     border: 6px solid #370000;
     box-shadow: 0 25px 45px rgb(0, 0, 0, 0.4);
+}
+
+.cards_container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 100px;   
+}
+
+.card {
+    width: 435px;
+    height: auto;
+    background-color: antiquewhite;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgb(0, 0, 0, 0.4);
+    margin: 20px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card_content {
+    padding: 16px;
+}
+
+.card_content h3 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.card_content p {
+    color: #370000;
+    font-size: 16px;
+    line-height: 1.3;
 }
