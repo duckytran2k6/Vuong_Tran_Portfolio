@@ -1,1 +1,1 @@
-This is the portfolio website of Vuong Tran.
+Hi, welcome to my personal portfolio!
