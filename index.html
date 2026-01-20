@@ -1,25 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Home | Skipper Tran Portfolio</title>
+    <title>Home | Vuong Tran Portfolio</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="style.css" rel="stylesheet" />
   </head>
   <body>
     <header class="nav_glass">
-      <h1 class="main_title">Skipper Tran</h1>
+      <h1 class="main_title">Vuong Tran</h1>
       <nav>
         <ul class="nav_anchors">
           <li><a href="#about">About</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#experiences">Experiences</a></li>
+          <li><a href="#contacts">Contacts</a></li>
         </ul>
       </nav>
-
-      <a class="contact" href="#contacts"
-        ><button type="button">Contacts</button></a
-      >
     </header>
 
     <main>
@@ -31,26 +28,22 @@
             <p>
               Hi! My name is Tran Duc Vuong but you can call me Skipper. I'm a
               second-year Computer Science (Specialization) student at Western
-              University with a strong interests in Blue Team roles,
-              particularly in IT, Networking, and SOC Analysis.
+              University. I am passionate in Blue Team roles, particularly in
+              IT, Networking, and SOC Analysis.
             </p>
             <p>
-              I enjoy learning how systems and networks work together, and how
-              they can be monitored, secured, and troubleshot in real-world
-              environments. I'm actively developing my skills in cybersecurity
-              fundamentals while continuing to explore other areas of computer
-              science through coursework and hands-on projects.
+              I enjoy learning how systems and networks work together. How they
+              can be monitored, secured, and troubleshot in real-world
+              situations. I'm actively developing and expanding my skills and
+              understanding in cybersecurity fundamentals while continuing to
+              explore other areas of Computer Science such as hardware, through
+              coursework and hands-on projects.
             </p>
             <p>
-              I'm always open to learning opporturnities and collaboration so
-              feel free to reach out via email if you'd like to connect!
-              <a
-                href="mailto:vu0ng.tr4nduc@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="My email"
-                >vu0ng.tr4nduc@gmail.com</a
-              >
+              I'm always open and ready to learning opportunities and
+              collaboration. Please feel free to reach out to me via my
+              <a href="#contacts">contact information</a>
+              !
             </p>
           </div>
           <div class="personal_photo">
@@ -64,12 +57,14 @@
         <h2>Projects</h2>
         <div class="cards_container">
           <div class="card">
-            <img
-              src="images/under-construction-build-work-architecture-iy-1920x1080.png"
-            />
+            <div class="card_img">
+              <img
+                src="images/under-construction-build-work-architecture-iy-1920x1080.png"
+              />
+            </div>
             <div class="card_content">
               <h3>Local File Encryption Tool | CLI_QuackyENC</h3>
-              <p>
+              <p class="card_desc">
                 A local CLI-based encryption and decryption tool using AES and
                 RSA algorithms for hybrid encryption that enables secure file
                 handling directly from the terminal, reinforcing cor concepts in
@@ -78,21 +73,24 @@
               </p>
               <div class="card_meta">
                 <a
-                href="https://github.com/duckytran2k6/CLI_QuackyENC"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Local encryption tool repo"
-                >View Repo</a
-              >
-              <p class="tools">Tool: Java</p>
+                  href="https://github.com/duckytran2k6/CLI_QuackyENC"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Local encryption tool repo"
+                  >View Repo</a
+                >
+                <p>Tool: Java</p>
               </div>
             </div>
           </div>
 
           <div class="card">
-            <img
+            <div class="card_img">
+              <img
               src="images/under-construction-build-work-architecture-iy-1920x1080.png"
             />
+            </div>
+            
             <div class="card_content">
               <h3>Wi-Fi Listener using ESP32</h3>
               <p>On going...</p>
@@ -119,10 +117,13 @@
         <h2>Experiences</h2>
         <div class="cards_container">
           <div class="card">
-            <img src="images/blake_burn_elementary.png" />
+            <div class="card_img">
+              <img src="images/blake_burn_elementary.png" />
+            </div>
+
             <div class="card_content">
               <h3>Elementary Tutor</h3>
-              <p>
+              <p class="card_desc">
                 Participated in a Leadership class project, working as a part of
                 a team to tutor Grade 3 students. Designed, organized, and
                 delivered valuable engaging hands-on activites that introduced
@@ -130,11 +131,11 @@
               </p>
               <div class="card_meta">
                 <a
-                href="https://www.sd43.bc.ca/school/blakeburn/Pages/default.aspx#/="
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Blakeburn Elementary school district website"
-                >Visit school website</a
+                  href="https://www.sd43.bc.ca/school/blakeburn/Pages/default.aspx#/="
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Blakeburn Elementary school district website"
+                  >Visit school website</a
                 >
                 <p>@ Blakeburn Elementary school</p>
               </div>
@@ -142,10 +143,12 @@
           </div>
 
           <div class="card">
-            <img src="images/terry_fox_secondary_2.png" />
+            <div class="card_img">
+              <img src="images/terry_fox_secondary_2.png" />
+            </div>
             <div class="card_content">
               <h3>Tour de Fox guide</h3>
-              <p>
+              <p class="card_desc">
                 Guided 2-3 groups of 10-15 middle school students from
                 Coquitlam, Port Coquitlam, and Port Moody through a
                 professionally organized school tour. Introduced school
@@ -154,22 +157,24 @@
               </p>
               <div class="card_meta">
                 <a
-                href="https://www.sd43.bc.ca/school/terryfox/Pages/default.aspx#/="
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Terry Fox Secondary school district website"
-                >Visit school website</a
-              >
-              <p>@ Terry Fox Secondary school</p>
+                  href="https://www.sd43.bc.ca/school/terryfox/Pages/default.aspx#/="
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Terry Fox Secondary school district website"
+                  >Visit school website</a
+                >
+                <p>@ Terry Fox Secondary school</p>
               </div>
             </div>
           </div>
 
           <div class="card">
-            <img src="images/terry_fox_secondary_2.png" />
+            <div class="card_img">
+              <img src="images/terry_fox_secondary_2.png" />
+            </div>
             <div class="card_content">
               <h3>Pro-D Day Assistant</h3>
-              <p>
+              <p class="card_desc">
                 Assited during School District 43 Pro-D Day by supporting
                 educators with classroom navigation, technical setup, and
                 on-site troubleshooting for digital check-in and scheduled
@@ -177,22 +182,24 @@
               </p>
               <div class="card_meta">
                 <a
-                href="https://www.sd43.bc.ca/school/terryfox/Pages/default.aspx#/="
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Terry Fox Secondary school district website"
-                >Visit school website</a
-              >
-              <p>@ Terry Fox Secondary school</p>
+                  href="https://www.sd43.bc.ca/school/terryfox/Pages/default.aspx#/="
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Terry Fox Secondary school district website"
+                  >Visit school website</a
+                >
+                <p>@ Terry Fox Secondary school</p>
               </div>
             </div>
           </div>
 
           <div class="card">
-            <img src="images/james_park_elementary.png" />
+            <div class="card_img">
+              <img src="images/james_park_elementary.png" />
+            </div>
             <div class="card_content">
               <h3>Local Science Fair Clean-Up Volunteer</h3>
-              <p>
+              <p class="card_desc">
                 Volunteered in post-event cleanup for a local elementary school
                 science fair. Collaborated with fellow student volunteers and
                 the event staff to organize equipment, restore facilities, and
@@ -200,13 +207,13 @@
               </p>
               <div class="card_meta">
                 <a
-                href="https://www.sd43.bc.ca/school/jamespark/Pages/default.aspx#/="
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="James Park Elementary school district website"
-                >Visit school website</a
-              >
-              <p>@ James Park Elementary school</p>
+                  href="https://www.sd43.bc.ca/school/jamespark/Pages/default.aspx#/="
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="James Park Elementary school district website"
+                  >Visit school website</a
+                >
+                <p>@ James Park Elementary school</p>
               </div>
             </div>
           </div>
@@ -245,6 +252,7 @@
               /></a>
             </li>
           </ul>
+          <a href="#">Back to top</a>
         </div>
       </section>
     </main>
