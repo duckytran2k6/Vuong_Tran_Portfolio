@@ -14,7 +14,6 @@
           <li><a href="#about">About</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#experiences">Experiences</a></li>
-          <li><a href="#contacts">Contacts</a></li>
         </ul>
       </nav>
     </header>
@@ -24,30 +23,54 @@
       <section id="about" class="section">
         <div class="container">
           <h2>About</h2>
-          <div class="content">
-            <p>
-              Hi! My name is Tran Duc Vuong but you can call me Skipper. I'm a
-              second-year Computer Science (Specialization) student at Western
-              University. I am passionate in Blue Team roles, particularly in
-              IT, Networking, and SOC Analysis.
-            </p>
-            <p>
-              I enjoy learning how systems and networks work together. How they
-              can be monitored, secured, and troubleshot in real-world
-              situations. I'm actively developing and expanding my skills and
-              understanding in cybersecurity fundamentals while continuing to
-              explore other areas of Computer Science such as hardware, through
-              coursework and hands-on projects.
-            </p>
-            <p>
-              I'm always open and ready to learning opportunities and
-              collaboration. Please feel free to reach out to me via my
-              <a href="#contacts">contact information</a>
-              !
-            </p>
-          </div>
-          <div class="personal_photo">
-            <img src="images/personal_photo.jpg" alt="Photo of myself!" />
+          <div class="about_flex">
+            <div class="personal_photo">
+              <img src="images/personal_photo.jpg" alt="Photo of myself!" />
+            </div>
+            <div class="about_right">
+              <div class="content">
+                <p>
+                  Hi! My name is Tran Duc Vuong but you can call me Skipper.
+                  I'm a third-year Computer Science (Specialization) student
+                  at Western University. I am passionate in Blue Team roles,
+                  particularly in IT, Networking, and SOC Analysis.
+                </p>
+                <p>
+                  I'm always open and ready to learning opportunities and
+                  collaboration. Please feel free to reach out to me via the
+                  contact information below!
+                </p>
+              </div>
+              <ul class="about_contacts">
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/vuong-tran-61a86a330/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn profile"
+                    ><img src="images/linkedin.svg" alt="LinkedIn"
+                  /></a>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/duckytran2k6"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub profile"
+                    ><img src="images/github.svg" alt="GitHub"
+                  /></a>
+                </li>
+                <li>
+                  <a
+                    href="mailto:vu0ng.tr4nduc@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Personal email"
+                    ><img src="images/email.svg" alt="Email"
+                  /></a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -59,11 +82,11 @@
           <div class="card">
             <div class="card_img">
               <img
-                src="images/under-construction-build-work-architecture-iy-1920x1080.png"
+                src="images/enc_tool_menu.png"
               />
             </div>
             <div class="card_content">
-              <h3>Local File Encryption Tool | CLI_QuackyENC</h3>
+              <h3>Encryption Tool</h3>
               <p class="card_desc">
                 A local CLI-based encryption and decryption tool using AES and
                 RSA algorithms for hybrid encryption that enables secure file
@@ -79,7 +102,7 @@
                   aria-label="Local encryption tool repo"
                   >View Repo</a
                 >
-                <p>Tool: Java</p>
+                <p>Tool: Java, Spring Boot</p>
               </div>
             </div>
           </div>
@@ -87,15 +110,19 @@
           <div class="card">
             <div class="card_img">
               <img
-              src="images/under-construction-build-work-architecture-iy-1920x1080.png"
+              src="images/wazuh_agent_dashboard.png"
             />
             </div>
-            
             <div class="card_content">
-              <h3>Wi-Fi Listener using ESP32</h3>
-              <p>On going...</p>
+              <h3>SOC Homelab</h3>
+              <p class="card_desc">
+                A SOC homelab environment built using an old laptop in order to provide an isolated and controlled environment. The lab
+                includes automation scripts, multiple virtual machines, network segmentations, and
+                a SIEM tool for security monitoring and alerting to provide hands-on experience in
+                threat detection, incident response, and security analysis.
+              </p>
               <div class="card_meta">
-                <p>Tool: ESP-32D</p>
+                <p>Tool: Docker, Wazuh, libvirt, iptables, bash</p>
               </div>
             </div>
           </div>
@@ -193,7 +220,7 @@
             </div>
           </div>
 
-          <div class="card">
+          <!-- <div class="card">
             <div class="card_img">
               <img src="images/james_park_elementary.png" />
             </div>
@@ -216,44 +243,13 @@
                 <p>@ James Park Elementary school</p>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </section>
 
-      <!-- Contacts section -->
+      <!-- Back to top -->
       <section id="contacts" class="footer">
-        <div class="social">
-          <ul class="contacts_info">
-            <li>
-              <a
-                href="https://www.linkedin.com/in/vuong-tran-61a86a330/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn profile"
-                ><img src="images/linkedin.svg" alt="LinkedIn"
-              /></a>
-            </li>
-            <li>
-              <a
-                href="https://github.com/duckytran2k6"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub profile"
-                ><img src="images/github.svg" alt="GitHub"
-              /></a>
-            </li>
-            <li>
-              <a
-                href="mailto:vu0ng.tr4nduc@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Personal email"
-                ><img src="images/email.svg" alt="Email"
-              /></a>
-            </li>
-          </ul>
-          <a href="#">Back to top</a>
-        </div>
+        <a href="#" class="back_to_top">Back to top</a>
       </section>
     </main>
   </body>
