@@ -1,254 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Home | Vuong Tran Portfolio</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="style.css" rel="stylesheet" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vuong Tran Portfolio</title>
+  <link href="style.css" rel="stylesheet" />
+  <script type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+    (function(){
+      emailjs.init({
+        publicKey: "g4rbQk9txe6-cbDQC",
+      });
+    })();
+  </script>
+  <script src="script.js"></script>
+  <script src="main.js"></script>
+</head>
+<body>
+<div class="stage">
+  <div class="brand">Vuong Tran</div>
+  <div id="stars-bg"></div>
 
-  <body>
-    <header class="nav_glass">
-      <h1 class="main_title">Vuong Tran</h1>
-      <nav>
-        <ul class="nav_anchors">
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#experiences">Experiences</a></li>
-          <li><a href="contact.html">Contact</a></li>
+  <svg id="constellation">
+    <!-- hook: message - dim - dim - about -->
+    <line class="tail" x1="83%" y1="19%" x2="78%" y2="14%" />
+    <line x1="78%" y1="14%" x2="65%" y2="25%" />
+    <line x1="65%" y1="25%" x2="66%" y2="34%" />
+    <!-- body loop: about - projects - contact - dim - experiences - dim - about -->
+    <line x1="66%" y1="34%" x2="34%" y2="40%" />
+    <line x1="34%" y1="40%" x2="14%" y2="58%" />
+    <line x1="14%" y1="58%" x2="36%" y2="53%" />
+    <line x1="36%" y1="53%" x2="79%" y2="52%" />
+    <line x1="79%" y1="52%" x2="76%" y2="39%" />
+    <line x1="76%" y1="39%" x2="66%" y2="34%" />
+  </svg>
+
+  <div class="deco-star" style="left:78%; top:14%;"></div>
+  <div class="deco-star" style="left:65%; top:25%;"></div>
+  <div class="deco-star" style="left:36%; top:53%;"></div>
+  <div class="deco-star" style="left:76%; top:39%;"></div>
+
+  <button class="node" data-id="about" style="left:66%; top:34%;">
+    <span class="dot"></span>
+    <span class="label">whoami</span>
+  </button>
+  <button class="node label-top" data-id="projects" style="left:34%; top:40%;">
+    <span class="dot"></span>
+    <span class="label">ls ~/projects</span>
+  </button>
+  <button class="node" data-id="contact" style="left:14%; top:58%;">
+    <span class="dot"></span>
+    <span class="label">whois vuong</span>
+  </button>
+  <button class="node" data-id="experiences" style="left:79%; top:52%;">
+    <span class="dot"></span>
+    <span class="label">history</span>
+  </button>
+  <button class="node tail" data-id="message" style="left:83%; top:19%;">
+    <span class="dot"></span>
+    <span class="label">curl -X POST /contact</span>
+  </button>
+
+  <button id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div id="menu">
+    <button data-id="about">About</button>
+    <button data-id="projects">Projects</button>
+    <button data-id="experiences">Experiences</button>
+    <button data-id="contact">Contact</button>
+    <button data-id="message">Message</button>
+  </div>
+
+  <div id="statusbar">
+    <div class="prompt"><span class="who">guest@vuong-tran</span>:~$ <span id="status-text"></span><span class="cursor"></span></div>
+  </div>
+
+  <aside id="panel">
+    <button id="panel-close" aria-label="Close">&times;</button>
+    <div class="term-chrome"><span class="r"></span><span class="y"></span><span class="g"></span></div>
+    <div class="term-line"><span class="who">guest@vuong-tran</span>:~$ <span class="cmd" id="panel-cmd"></span><span class="cursor2" id="panel-cursor"></span></div>
+
+    <div id="panel-content">
+      <div class="panel-pane" id="pane-about">
+        <img class="pane-photo" src="images/personal_photo.jpg" alt="Photo of Vuong Tran" />
+        <p>Hi! My name is Tran Duc Vuong but you can call me Skipper. I'm a third-year Computer Science (Specialization) student at Western University. I am passionate in Blue Team roles, particularly in IT, Networking, and SOC Analysis.</p>
+        <p>I'm always open and ready to learning opportunities and collaboration. Feel free to reach out via the Contact or Message stars!</p>
+      </div>
+
+      <div class="panel-pane" id="pane-projects">
+        <div class="pane-item">
+          <img class="pane-thumb" src="images/enc_tool_menu.png" alt="Encryption Tool screenshot" />
+          <h3>Encryption Tool</h3>
+          <p>A local CLI-based encryption and decryption tool using AES and RSA algorithms for hybrid encryption that enables secure file handling directly from the terminal, reinforcing core concepts in data protection, system interaction, and security-focused workflows.</p>
+          <p class="pane-meta">Tool: Java &middot; <a href="https://github.com/duckytran2k6/CLI_QuackyENC" target="_blank" rel="noopener noreferrer">View Repo</a></p>
+        </div>
+        <div class="pane-item">
+          <img class="pane-thumb" src="images/wazuh_agent_dashboard.png" alt="SOC Homelab screenshot" />
+          <h3>SOC Homelab</h3>
+          <p>A SOC homelab environment built using an old laptop to provide an isolated and controlled environment. Includes automation scripts, multiple virtual machines, network segmentation, and a SIEM tool for security monitoring and alerting, hands-on experience in threat detection, incident response, and security analysis.</p>
+          <p class="pane-meta">Tool: Docker, Wazuh, libvirt, iptables, bash</p>
+        </div>
+      </div>
+
+      <div class="panel-pane" id="pane-experiences">
+        <div class="pane-item">
+          <img class="pane-thumb" src="images/blake_burn_elementary.png" alt="Blakeburn Elementary" />
+          <h3>Elementary Tutor</h3>
+          <p>Participated in a Leadership class project, tutoring Grade 3 students. Designed, organized, and delivered engaging hands-on activities that introduced critical thinking, leadership, and problem solving.</p>
+          <p class="pane-meta">@ Blakeburn Elementary school &middot; <a href="https://www.sd43.bc.ca/school/blakeburn/Pages/default.aspx#/=" target="_blank" rel="noopener noreferrer">Visit website</a></p>
+        </div>
+        <div class="pane-item">
+          <img class="pane-thumb" src="images/terry_fox_secondary_2.png" alt="Terry Fox Secondary" />
+          <h3>Tour de Fox guide</h3>
+          <p>Guided 2-3 groups of 10-15 middle school students from Coquitlam, Port Coquitlam, and Port Moody through a professionally organized school tour, introducing facilities, course offerings, and key aspects of high school life.</p>
+          <p class="pane-meta">@ Terry Fox Secondary school &middot; <a href="https://www.sd43.bc.ca/school/terryfox/Pages/default.aspx#/=" target="_blank" rel="noopener noreferrer">Visit website</a></p>
+        </div>
+        <div class="pane-item">
+          <img class="pane-thumb" src="images/terry_fox_secondary_2.png" alt="Terry Fox Secondary" />
+          <h3>Pro-D Day Assistant</h3>
+          <p>Assisted during School District 43 Pro-D Day, supporting educators with classroom navigation, technical setup, and on-site troubleshooting for digital check-in and scheduled activities.</p>
+          <p class="pane-meta">@ Terry Fox Secondary school &middot; <a href="https://www.sd43.bc.ca/school/terryfox/Pages/default.aspx#/=" target="_blank" rel="noopener noreferrer">Visit website</a></p>
+        </div>
+      </div>
+
+      <div class="panel-pane" id="pane-contact">
+        <p>Reach out directly:</p>
+        <ul class="pane-contacts">
+          <li>
+            <a href="mailto:vu0ng.tr4nduc@gmail.com">
+              <span class="icon-circle"><img src="images/email.svg" alt="" /></span>
+              vu0ng.tr4nduc@gmail.com
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/vuong-tran-61a86a330/" target="_blank" rel="noopener noreferrer">
+              <span class="icon-circle"><img src="images/linkedin.svg" alt="" /></span>
+              LinkedIn
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/duckytran2k6" target="_blank" rel="noopener noreferrer">
+              <span class="icon-circle"><img src="images/github.svg" alt="" /></span>
+              GitHub
+            </a>
+          </li>
         </ul>
-      </nav>
-    </header>
+      </div>
 
-    <main>
-      <section id="about" class="section">
-        <div class="container">
-          <h2>About</h2>
-          <div class="about_flex">
-            <div class="personal_photo">
-              <img src="images/personal_photo.jpg" alt="Photo of myself!" />
-            </div>
-            <div class="about_right">
-              <div class="content">
-                <p>
-                  Hi! My name is Tran Duc Vuong but you can call me Skipper.
-                  I'm a third-year Computer Science (Specialization) student
-                  at Western University. I am passionate in Blue Team roles,
-                  particularly in IT, Networking, and SOC Analysis.
-                </p>
-                <p>
-                  I'm always open and ready to learning opportunities and
-                  collaboration. Please feel free to reach out to me via my email <a>vu0ng.tr4nduc@gmail.com</a>, contact form above, or the
-                  contacts below!
-                </p>
-              </div>
-              <ul class="about_contacts">
-                <li>
-                  <a
-                    href="https://www.linkedin.com/in/vuong-tran-61a86a330/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="LinkedIn profile"
-                    ><img src="images/linkedin.svg" alt="LinkedIn"
-                  /></a>
-                </li>
-                <li>
-                  <a
-                    href="https://github.com/duckytran2k6"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="GitHub profile"
-                    ><img src="images/github.svg" alt="GitHub"
-                  /></a>
-                </li>
-                <li>
-                  <a
-                    href="mailto:vu0ng.tr4nduc@gmail.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Personal email"
-                    ><img src="images/email.svg" alt="Email"
-                  /></a>
-                </li>
-              </ul>
-            </div>
+      <div class="panel-pane" id="pane-message">
+        <p>Have a question, an opportunity, or just want to connect? Send a message and I'll get back to you.</p>
+        <form id="contact_form" class="contact_form">
+          <div class="form_field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
           </div>
-        </div>
-      </section>
-
-      <section id="projects" class="section">
-        <h2>Projects</h2>
-        <div class="cards_container">
-          <div class="card">
-            <div class="card_img">
-              <img
-                src="images/enc_tool_menu.png"
-              />
-            </div>
-            <div class="card_content">
-              <h3>Encryption Tool</h3>
-              <p class="card_desc">
-                A local CLI-based encryption and decryption tool using AES and
-                RSA algorithms for hybrid encryption that enables secure file
-                handling directly from the terminal, reinforcing cor concepts in
-                data protection, system interaction, and security-focused
-                workflows.
-              </p>
-              <div class="card_meta">
-                <a
-                  href="https://github.com/duckytran2k6/CLI_QuackyENC"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Local encryption tool repo"
-                  >View Repo</a
-                >
-                <p>Tool: Java</p>
-              </div>
-            </div>
+          <div class="form_field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
           </div>
-
-          <div class="card">
-            <div class="card_img">
-              <img
-              src="images/wazuh_agent_dashboard.png"
-            />
-            </div>
-            <div class="card_content">
-              <h3>SOC Homelab</h3>
-              <p class="card_desc">
-                A SOC homelab environment built using an old laptop in order to provide an isolated and controlled environment. The lab
-                includes automation scripts, multiple virtual machines, network segmentations, and
-                a SIEM tool for security monitoring and alerting to provide hands-on experience in
-                threat detection, incident response, and security analysis.
-              </p>
-              <div class="card_meta">
-                <p>Tool: Docker, Wazuh, libvirt, iptables, bash</p>
-              </div>
-            </div>
+          <div class="form_field">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required />
           </div>
-
-          <!-- <div class="card">
-            <img
-              src="images/under-construction-build-work-architecture-iy-1920x1080.png"
-            />
-            <div class="card_content">
-              <h3>Project 3</h3>
-              <p>TBD</p>
-            </div>
-          </div> -->
-        </div>
-      </section>
-
-      <section id="experiences">
-        <h2>Experiences</h2>
-        <div class="cards_container">
-          <div class="card">
-            <div class="card_img">
-              <img src="images/blake_burn_elementary.png" />
-            </div>
-
-            <div class="card_content">
-              <h3>Elementary Tutor</h3>
-              <p class="card_desc">
-                Participated in a Leadership class project, working as a part of
-                a team to tutor Grade 3 students. Designed, organized, and
-                delivered valuable engaging hands-on activites that introduced
-                critical thinking, leadership, and problem solving.
-              </p>
-              <div class="card_meta">
-                <a
-                  href="https://www.sd43.bc.ca/school/blakeburn/Pages/default.aspx#/="
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Blakeburn Elementary school district website"
-                  >Visit school website</a
-                >
-                <p>@ Blakeburn Elementary school</p>
-              </div>
-            </div>
+          <div class="form_field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
           </div>
-
-          <div class="card">
-            <div class="card_img">
-              <img src="images/terry_fox_secondary_2.png" />
-            </div>
-            <div class="card_content">
-              <h3>Tour de Fox guide</h3>
-              <p class="card_desc">
-                Guided 2-3 groups of 10-15 middle school students from
-                Coquitlam, Port Coquitlam, and Port Moody through a
-                professionally organized school tour. Introduced school
-                facilities, course offerings, and key aspects of highschool life
-                while answering questions from students and parents.
-              </p>
-              <div class="card_meta">
-                <a
-                  href="https://www.sd43.bc.ca/school/terryfox/Pages/default.aspx#/="
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Terry Fox Secondary school district website"
-                  >Visit school website</a
-                >
-                <p>@ Terry Fox Secondary school</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card_img">
-              <img src="images/terry_fox_secondary_2.png" />
-            </div>
-            <div class="card_content">
-              <h3>Pro-D Day Assistant</h3>
-              <p class="card_desc">
-                Assited during School District 43 Pro-D Day by supporting
-                educators with classroom navigation, technical setup, and
-                on-site troubleshooting for digital check-in and scheduled
-                activities.
-              </p>
-              <div class="card_meta">
-                <a
-                  href="https://www.sd43.bc.ca/school/terryfox/Pages/default.aspx#/="
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Terry Fox Secondary school district website"
-                  >Visit school website</a
-                >
-                <p>@ Terry Fox Secondary school</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- <div class="card">
-            <div class="card_img">
-              <img src="images/james_park_elementary.png" />
-            </div>
-            <div class="card_content">
-              <h3>Local Science Fair Clean-Up Volunteer</h3>
-              <p class="card_desc">
-                Volunteered in post-event cleanup for a local elementary school
-                science fair. Collaborated with fellow student volunteers and
-                the event staff to organize equipment, restore facilities, and
-                complete assigned tasks efficiently within time constraints.
-              </p>
-              <div class="card_meta">
-                <a
-                  href="https://www.sd43.bc.ca/school/jamespark/Pages/default.aspx#/="
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="James Park Elementary school district website"
-                  >Visit school website</a
-                >
-                <p>@ James Park Elementary school</p>
-              </div>
-            </div>
-          </div> -->
-        </div>
-      </section>
-
-      <section id="contacts" class="footer">
-        <a href="#" class="back_to_top">Back to top</a>
-      </section>
-    </main>
-  </body>
+          <button type="submit" class="form_submit">Send Message</button>
+          <p class="form_status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </aside>
+</div>
+</body>
 </html>
