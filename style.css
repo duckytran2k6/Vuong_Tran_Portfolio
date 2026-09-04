@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Cinzel+Decorative:wght@400;700;900&display=swap');
 
 :root {
   --bg: rgb(6, 8, 14);
@@ -22,10 +22,11 @@ html, body {
 
 .brand {
   position: absolute;
-  top: 28px;
+  top: 50px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 18px;
+  font-size: 65px;
+  font-family: "Cinzel Decorative", serif;
   letter-spacing: 0.5px;
   opacity: 0.85;
   z-index: 3;
@@ -55,7 +56,7 @@ html, body {
   opacity: 0.5;
   stroke-dasharray: 3000;
   stroke-dashoffset: 3000;
-  animation: draw 1.6s ease forwards;
+  animation: draw 5s ease forwards;
 }
 
 #constellation line.tail { opacity: 0.3; }
@@ -220,7 +221,7 @@ html, body {
   background: none;
   border: none;
   color: var(--text);
-  font-family: inherit;
+  font-family: "Cinzel Decorative", serif;
   font-size: 13px;
   text-align: left;
   padding: 8px 12px;
@@ -372,4 +373,4 @@ html, body {
 
 @media (max-width: 560px) {
   #panel { width: 100%; max-width: 100%; }
-}
+}   
