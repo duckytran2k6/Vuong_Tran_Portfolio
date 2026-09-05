@@ -9,6 +9,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  const brand = document.querySelector(".brand");
+  const brandLine = document.querySelector(".brand-line");
+  if (brand && brandLine) {
+    brandLine.style.width = (brand.offsetWidth + 40) + "px";
+  }
+
   const starsBg = document.getElementById("stars-bg");
   for (let i = 0; i < 70; i++) {
     const s = document.createElement("div");
@@ -70,12 +76,37 @@ document.addEventListener("DOMContentLoaded", () => {
     hamburger.setAttribute("aria-expanded", String(isOpen));
   });
 
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+
+  function openLightbox(src, alt) {
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || "";
+    lightbox.classList.add("open");
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove("open");
+    lightboxImg.src = "";
+  }
+
+  document.querySelectorAll(".pane-photo, .pane-thumb").forEach(img => {
+    img.addEventListener("click", () => openLightbox(img.src, img.alt));
+  });
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.getElementById("lightbox-close").addEventListener("click", closeLightbox);
+
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       panel.classList.remove("open");
       menu.classList.remove("open");
       nodes.forEach(n => n.classList.remove("active"));
       clearInterval(typingId);
+      closeLightbox();
     }
   });
 

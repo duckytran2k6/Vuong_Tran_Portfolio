@@ -34,13 +34,13 @@ html, body {
 
 .brand {
   font-family: "Cinzel Decorative", serif;
-  font-size: 55px;
+  font-size: 65px;
   letter-spacing: 0.5px;
   opacity: 0.85;
 }
 
 .brand-line {
-  width: 450px;
+  width: 500px;
   height: 2px;
   background: #ffffff;
   opacity: 0.5;
@@ -314,8 +314,8 @@ html, body {
 .pane-item:last-child { margin-bottom: 0; }
 
 .pane-thumb {
-  width: 100%;
-  height: 160px;
+  width: 110%;
+  height: 220px;
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 10px;
@@ -329,8 +329,8 @@ html, body {
 .pane-contacts { list-style: none; display: flex; flex-direction: column; gap: 12px; }
 .pane-contacts a { display: flex; align-items: center; gap: 10px; text-decoration: none; font-size: 13px; }
 .pane-contacts .icon-circle {
-  width: 28px;
-  height: 28px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: #ffffff;
   display: flex;
@@ -338,7 +338,7 @@ html, body {
   justify-content: center;
   flex-shrink: 0;
 }
-.pane-contacts .icon-circle img { width: 16px; height: 16px; }
+.pane-contacts .icon-circle img { width: 22px; height: 22px; }
 
 .contact_form {
   display: flex;
@@ -386,6 +386,45 @@ html, body {
 .form_submit:hover { opacity: 0.85; }
 
 .form_status { font-size: 13px; color: var(--accent); min-height: 18px; }
+
+.pane-photo,
+.pane-thumb {
+  cursor: zoom-in;
+}
+
+#lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+}
+
+#lightbox.open { display: flex; }
+
+#lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 8px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+  cursor: default;
+}
+
+#lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+#lightbox-close:hover { color: var(--accent); }
 
 @media (prefers-reduced-motion: reduce) {
   .bgstar { animation: none; opacity: 0.35; }
