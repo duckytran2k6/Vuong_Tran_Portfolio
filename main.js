@@ -9,12 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  const brand = document.querySelector(".brand");
-  const brandLine = document.querySelector(".brand-line");
-  if (brand && brandLine) {
-    brandLine.style.width = (brand.offsetWidth + 40) + "px";
-  }
-
   const starsBg = document.getElementById("stars-bg");
   for (let i = 0; i < 70; i++) {
     const s = document.createElement("div");
