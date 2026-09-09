@@ -27,6 +27,27 @@
   </div>
   <div id="stars-bg"></div>
 
+  <button id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div id="menu">
+    <button data-id="about">About</button>
+    <button data-id="projects">Projects</button>
+    <button data-id="experiences">Experiences</button>
+    <button data-id="contact">Contact</button>
+    <button data-id="message">Message</button>
+  </div>
+
+  <div id="statusbar">
+    <div class="prompt"><span class="who">guest@vuong-tran</span>:~$ <span id="status-text"></span><span class="cursor"></span></div>
+    <div class="quick-links">
+      <button data-id="projects">Explore Projects</button>
+      <a href="Vuong_Tran_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+      <a href="https://github.com/duckytran2k6" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="mailto:vu0ng.tr4nduc@gmail.com">Email</a>
+    </div>
+  </div>
+
   <svg id="constellation">
     <line class="tail" x1="72%" y1="35%" x2="69%" y2="30%" />
     <line x1="69%" y1="30%" x2="60%" y2="41%" />
@@ -64,21 +85,6 @@
     <span class="dot"></span>
     <span class="label">curl -X POST /contact</span>
   </button>
-
-  <button id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-  <div id="menu">
-    <button data-id="about">About</button>
-    <button data-id="projects">Projects</button>
-    <button data-id="experiences">Experiences</button>
-    <button data-id="contact">Contact</button>
-    <button data-id="message">Message</button>
-  </div>
-
-  <div id="statusbar">
-    <div class="prompt"><span class="who">guest@vuong-tran</span>:~$ <span id="status-text"></span><span class="cursor"></span></div>
-  </div>
 
   <aside id="panel">
     <button id="panel-close" aria-label="Close">&times;</button>
