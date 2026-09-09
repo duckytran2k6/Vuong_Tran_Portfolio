@@ -184,12 +184,29 @@ html, body {
   border-top: 1px solid rgba(255,255,255,0.1);
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 0 24px;
+  gap: 16px;
 }
 
 #statusbar .prompt { font-size: 13px; color: var(--dim); white-space: nowrap; overflow: hidden; }
 #statusbar .who { color: var(--accent); }
 #statusbar .cursor { display: inline-block; width: 7px; height: 13px; background: var(--dim); margin-left: 2px; vertical-align: -2px; animation: blink 1s step-end infinite; }
+
+.quick-links { display: flex; align-items: center; gap: 18px; flex-shrink: 0; }
+.quick-links button,
+.quick-links a {
+  background: none;
+  border: none;
+  color: var(--dim);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.quick-links button:hover,
+.quick-links a:hover { color: var(--accent); }
 
 @keyframes blink { 50% { opacity: 0; } }
 
