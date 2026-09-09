@@ -34,24 +34,27 @@ html, body {
 
 .brand {
   font-family: "Cinzel Decorative", serif;
-  font-size: 55px;
+  font-size: 65px;
   letter-spacing: 0.5px;
   opacity: 0.85;
 }
 
 .brand-line {
-  width: 450px;
+  width: 500px;
   height: 2px;
   background: #ffffff;
   opacity: 0.5;
 }
 
 .tagline {
-  font-size: 14px;
+  font-size: 15px;
   font-family: "Cinzel Decorative", serif;
   letter-spacing: 1px;
-  color: var(--dim);
-  white-space: nowrap;
+  color: var(--text);
+  opacity: 0.85;
+  white-space: normal;
+  max-width: 460px;
+  text-align: center;
 }
 
 #stars-bg { position: absolute; inset: 0; z-index: 0; }
@@ -135,11 +138,11 @@ html, body {
   margin-top: 6px;
   font-size: 12px;
   letter-spacing: 0.2px;
-  opacity: 0;
-  transform: translateX(-50%) translateY(-4px);
-  transition: 0.3s ease;
+  transform: translateX(-50%);
+  transition: color 0.3s ease;
   white-space: nowrap;
-  color: var(--accent);
+  color: var(--dim);
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
   pointer-events: none;
 }
 
@@ -148,12 +151,6 @@ html, body {
   bottom: 100%;
   margin-top: 0;
   margin-bottom: 6px;
-  transform: translateX(-50%) translateY(4px);
-}
-
-.node.label-top:hover .label,
-.node.label-top:focus-visible .label {
-  transform: translateX(-50%) translateY(0);
 }
 
 .node:hover .dot,
@@ -164,9 +161,9 @@ html, body {
 }
 
 .node:hover .label,
-.node:focus-visible .label {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
+.node:focus-visible .label,
+.node.active .label {
+  color: var(--accent);
 }
 
 .node:focus-visible { outline: 1px solid var(--accent); outline-offset: 6px; border-radius: 50%; }
@@ -175,8 +172,6 @@ html, body {
   background: var(--accent);
   box-shadow: 0 0 16px var(--accent), 0 0 28px var(--accent);
 }
-
-.node.active .label { opacity: 1; transform: translateX(-50%) translateY(0); }
 
 #statusbar {
   position: absolute;
@@ -200,8 +195,8 @@ html, body {
 
 #hamburger {
   position: absolute;
-  right: 28px;
-  bottom: 62px;
+  top: 50px;
+  right: 32px;
   z-index: 4;
   width: 44px;
   height: 44px;
@@ -221,8 +216,8 @@ html, body {
 
 #menu {
   position: absolute;
-  right: 28px;
-  bottom: 116px;
+  top: 100px;
+  right: 32px;
   z-index: 4;
   background: var(--section_bg);
   border: 1px solid rgba(255,255,255,0.12);
@@ -231,7 +226,7 @@ html, body {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  transform: translateY(8px);
+  transform: translateY(-8px);
   opacity: 0;
   pointer-events: none;
   transition: 0.25s ease;
@@ -314,8 +309,8 @@ html, body {
 .pane-item:last-child { margin-bottom: 0; }
 
 .pane-thumb {
-  width: 110%;
-  height: 220px;
+  width: 100%;
+  height: 200px;
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 10px;
