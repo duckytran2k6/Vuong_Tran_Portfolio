@@ -58,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   nodes.forEach(n => n.addEventListener("click", () => openPanel(n.dataset.id)));
   menu.querySelectorAll("button").forEach(b => b.addEventListener("click", () => openPanel(b.dataset.id)));
+  document.querySelectorAll(".quick-links button[data-id]").forEach(b => b.addEventListener("click", () => openPanel(b.dataset.id)));
 
   document.getElementById("panel-close").addEventListener("click", () => {
     panel.classList.remove("open");
