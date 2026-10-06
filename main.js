@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
     about: { cmd: "whoami" },
     projects: { cmd: "ls ~/projects" },
     experiences: { cmd: "history" },
-    contact: { cmd: "whois vuong" },
-    message: { cmd: "curl -X POST /contact" }
+    contact: { cmd: "curl -X POST /contacts" },
+    certs: { cmd: "ls ~/certs" }
   };
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -59,6 +59,18 @@ document.addEventListener("DOMContentLoaded", () => {
   nodes.forEach(n => n.addEventListener("click", () => openPanel(n.dataset.id)));
   menu.querySelectorAll("button").forEach(b => b.addEventListener("click", () => openPanel(b.dataset.id)));
   document.querySelectorAll(".quick-links button[data-id]").forEach(b => b.addEventListener("click", () => openPanel(b.dataset.id)));
+
+  const formToggle = document.getElementById("form-toggle");
+  const formWrap = document.getElementById("form-wrap");
+
+  formToggle.addEventListener("click", () => {
+    const isOpen = formWrap.classList.toggle("open");
+    formToggle.setAttribute("aria-expanded", String(isOpen));
+    formToggle.textContent = isOpen ? "Hide form" : "Send a message";
+    if (isOpen) {
+      formWrap.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "nearest" });
+    }
+  });
 
   document.getElementById("panel-close").addEventListener("click", () => {
     panel.classList.remove("open");
