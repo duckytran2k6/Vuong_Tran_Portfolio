@@ -34,7 +34,7 @@ html, body {
 
 .brand {
   font-family: "Cinzel Decorative", serif;
-  font-size: 65px;
+  font-size: clamp(26px, 9vw, 65px);
   letter-spacing: 0.5px;
   opacity: 0.85;
 }
@@ -72,6 +72,8 @@ html, body {
   0%, 100% { opacity: 0.15; }
   50% { opacity: 0.7; }
 }
+
+.constellation-wrap { width: 100%; height: 100%; }
 
 #constellation { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; }
 
@@ -446,4 +448,30 @@ html, body {
 
 @media (max-width: 560px) {
   #panel { width: 100%; max-width: 100%; }
+}
+
+@media (max-width: 600px) {
+  .header-block { top: 24px; gap: 10px; }
+
+  .brand-line { width: 60vw; max-width: 280px; }
+
+  .tagline { font-size: 13px; max-width: 88vw; }
+
+  #hamburger {
+    top: auto;
+    bottom: 62px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+  }
+
+  #menu {
+    top: auto;
+    bottom: 112px;
+    right: 20px;
+  }
+
+  .constellation-wrap {
+    transform: translateY(55px);
+  }
 }

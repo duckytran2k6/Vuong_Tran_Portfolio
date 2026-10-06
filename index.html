@@ -48,43 +48,45 @@
     </div>
   </div>
 
-  <svg id="constellation">
-    <line class="tail" x1="72%" y1="35%" x2="69%" y2="30%" />
-    <line x1="69%" y1="30%" x2="60%" y2="41%" />
-    <line x1="60%" y1="41%" x2="61%" y2="50%" />
-    <line x1="61%" y1="50%" x2="38%" y2="56%" />
-    <line x1="38%" y1="56%" x2="24%" y2="74%" />
-    <line x1="24%" y1="74%" x2="40%" y2="69%" />
-    <line x1="40%" y1="69%" x2="70%" y2="68%" />
-    <line x1="70%" y1="68%" x2="68%" y2="55%" />
-    <line x1="68%" y1="55%" x2="61%" y2="50%" />
-  </svg>
+  <div class="constellation-wrap">
+    <svg id="constellation">
+      <line class="tail" x1="72%" y1="35%" x2="69%" y2="30%" />
+      <line x1="69%" y1="30%" x2="60%" y2="41%" />
+      <line x1="60%" y1="41%" x2="61%" y2="50%" />
+      <line x1="61%" y1="50%" x2="38%" y2="56%" />
+      <line x1="38%" y1="56%" x2="24%" y2="74%" />
+      <line x1="24%" y1="74%" x2="40%" y2="69%" />
+      <line x1="40%" y1="69%" x2="70%" y2="68%" />
+      <line x1="70%" y1="68%" x2="68%" y2="55%" />
+      <line x1="68%" y1="55%" x2="61%" y2="50%" />
+    </svg>
 
-  <div class="deco-star" style="left:69%; top:30%;"></div>
-  <div class="deco-star" style="left:60%; top:41%;"></div>
-  <div class="deco-star" style="left:40%; top:69%;"></div>
-  <div class="deco-star" style="left:68%; top:55%;"></div>
+    <div class="deco-star" style="left:69%; top:30%;"></div>
+    <div class="deco-star" style="left:60%; top:41%;"></div>
+    <div class="deco-star" style="left:40%; top:69%;"></div>
+    <div class="deco-star" style="left:68%; top:55%;"></div>
 
-  <button class="node" data-id="about" style="left:61%; top:50%;">
-    <span class="dot"></span>
-    <span class="label">whoami</span>
-  </button>
-  <button class="node label-top" data-id="projects" style="left:38%; top:56%;">
-    <span class="dot"></span>
-    <span class="label">ls ~/projects</span>
-  </button>
-  <button class="node" data-id="contact" style="left:24%; top:74%;">
-    <span class="dot"></span>
-    <span class="label">whois vuong</span>
-  </button>
-  <button class="node" data-id="experiences" style="left:70%; top:68%;">
-    <span class="dot"></span>
-    <span class="label">history</span>
-  </button>
-  <button class="node tail" data-id="message" style="left:72%; top:35%;">
-    <span class="dot"></span>
-    <span class="label">curl -X POST /contact</span>
-  </button>
+    <button class="node" data-id="about" style="left:61%; top:50%;">
+      <span class="dot"></span>
+      <span class="label">whoami</span>
+    </button>
+    <button class="node label-top" data-id="projects" style="left:38%; top:56%;">
+      <span class="dot"></span>
+      <span class="label">ls ~/projects</span>
+    </button>
+    <button class="node" data-id="contact" style="left:24%; top:74%;">
+      <span class="dot"></span>
+      <span class="label">whois vuong</span>
+    </button>
+    <button class="node" data-id="experiences" style="left:70%; top:68%;">
+      <span class="dot"></span>
+      <span class="label">history</span>
+    </button>
+    <button class="node tail" data-id="message" style="left:72%; top:35%;">
+      <span class="dot"></span>
+      <span class="label">curl -X POST /contact</span>
+    </button>
+  </div>
 
   <aside id="panel">
     <button id="panel-close" aria-label="Close">&times;</button>
