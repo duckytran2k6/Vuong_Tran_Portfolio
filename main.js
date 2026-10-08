@@ -1,3 +1,160 @@
+const cardData = {
+  projects: [
+    {
+      image: "images/enc_tool_menu.png",
+      imageAlt: "Encryption Tool screenshot",
+      title: "Encryption Tool",
+      description:
+        "A local CLI-based encryption and decryption tool using AES and RSA algorithms for hybrid encryption that enables secure file handling directly from the terminal, reinforcing core concepts in data protection, system interaction, and security-focused workflows.",
+      meta: "Tool: Java",
+      link: { text: "View Repo", href: "https://github.com/duckytran2k6/CLI_QuackyENC" }
+    },
+    {
+      image: "images/wazuh_agent_dashboard.png",
+      imageAlt: "SOC Homelab screenshot",
+      title: "SOC Homelab",
+      description:
+        "A SOC homelab environment built using an old laptop to provide an isolated and controlled environment. Includes automation scripts, multiple virtual machines, network segmentation, and a SIEM tool for security monitoring and alerting, hands-on experience in threat detection, incident response, and security analysis.",
+      meta: "Tool: Docker, Wazuh, libvirt, iptables, bash"
+    }
+  ],
+
+  experiences: [
+    {
+      image: "images/blake_burn_elementary.png",
+      imageAlt: "Blakeburn Elementary",
+      title: "Elementary Tutor",
+      description:
+        "Participated in a Leadership class project, tutoring Grade 3 students. Designed, organized, and delivered engaging hands-on activities that introduced critical thinking, leadership, and problem solving.",
+      meta: "@ Blakeburn Elementary school",
+      link: { text: "Visit website", href: "https://www.sd43.bc.ca/school/blakeburn/Pages/default.aspx#/=" }
+    },
+    {
+      image: "images/terry_fox_secondary_2.png",
+      imageAlt: "Terry Fox Secondary",
+      title: "Tour de Fox guide",
+      description:
+        "Guided 2-3 groups of 10-15 middle school students from Coquitlam, Port Coquitlam, and Port Moody through a professionally organized school tour, introducing facilities, course offerings, and key aspects of high school life.",
+      meta: "@ Terry Fox Secondary school",
+      link: { text: "Visit website", href: "https://www.sd43.bc.ca/school/terryfox/Pages/default.aspx#/=" }
+    },
+    {
+      image: "images/terry_fox_secondary_2.png",
+      imageAlt: "Terry Fox Secondary",
+      title: "Pro-D Day Assistant",
+      description:
+        "Assisted during School District 43 Pro-D Day, supporting educators with classroom navigation, technical setup, and on-site troubleshooting for digital check-in and scheduled activities.",
+      meta: "@ Terry Fox Secondary school",
+      link: { text: "Visit website", href: "https://www.sd43.bc.ca/school/terryfox/Pages/default.aspx#/=" }
+    }
+  ],
+
+  certs: [
+    {
+      image: "images/tryhackme.png",
+      imageAlt: "TryHackMe",
+      details: [
+        { label: "Current Path", value: "SAL1" },
+        { label: "Completed Path", value: "Coming soon..." }
+      ],
+      button: { text: "View TryHackMe profile", href: "YOUR_TRYHACKME_PROFILE_URL" }
+    },
+    {
+      image: "images/comptia_network+.png",
+      imageAlt: "CompTIA Network+",
+      details: [
+        { label: "Goal", value: "Take the exam in mid-February 2027" }
+      ],
+      button: { text: "Progress Tracking", href: "https://docs.google.com/spreadsheets/d/19OGkEmGRE37BhISMT9oVLpvM8ffRIBf_WMpRSvo-vRo/edit?usp=sharing" }
+    }
+  ]
+};
+
+function makeLink(link) {
+  const a = document.createElement("a");
+  a.href = link.href;
+  a.textContent = link.text;
+  a.target = "_blank";
+  a.rel = "noopener noreferrer";
+  return a;
+}
+
+function buildCard(card) {
+  const item = document.createElement("div");
+  item.className = "pane-item";
+
+  if (card.image) {
+    const img = document.createElement("img");
+    img.className = "pane-thumb";
+    img.src = card.image;
+    img.alt = card.imageAlt || "";
+    item.appendChild(img);
+  }
+
+  if (card.title) {
+    const h3 = document.createElement("h3");
+    h3.textContent = card.title;
+    item.appendChild(h3);
+  }
+
+  if (card.description) {
+    const p = document.createElement("p");
+    p.textContent = card.description;
+    item.appendChild(p);
+  }
+
+  (card.details || []).forEach((d) => {
+    const p = document.createElement("p");
+    p.className = "pane-detail";
+
+    const label = document.createElement("span");
+    label.className = "detail-label";
+    label.textContent = d.label + ":";
+    p.appendChild(label);
+
+    if (d.value) p.appendChild(document.createTextNode(" " + d.value));
+    if (d.link) {
+      p.appendChild(document.createTextNode(" "));
+      p.appendChild(makeLink(d.link));
+    }
+    item.appendChild(p);
+  });
+
+  if (card.meta || card.link) {
+    const p = document.createElement("p");
+    p.className = "pane-meta";
+    if (card.meta) p.appendChild(document.createTextNode(card.meta));
+    if (card.meta && card.link) p.appendChild(document.createTextNode(" · "));
+    if (card.link) p.appendChild(makeLink(card.link));
+    item.appendChild(p);
+  }
+
+  if (card.button) {
+    const a = makeLink(card.button);
+    a.className = "pane-button";
+    item.appendChild(a);
+  }
+
+  return item;
+}
+
+function renderCards(sectionId) {
+  const pane = document.getElementById("pane-" + sectionId);
+  if (!pane) return;
+  const cards = cardData[sectionId] || [];
+  pane.textContent = "";
+
+  cards.forEach((card, index) => {
+    pane.appendChild(buildCard(card));
+
+    if (index < cards.length - 1) {
+      const divider = document.createElement("hr");
+      divider.className = "pane-divider";
+      pane.appendChild(divider);
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const content = {
     about: { cmd: "whoami" },
@@ -8,6 +165,8 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  Object.keys(cardData).forEach(renderCards);
 
   const starsBg = document.getElementById("stars-bg");
   for (let i = 0; i < 70; i++) {
@@ -26,19 +185,26 @@ document.addEventListener("DOMContentLoaded", () => {
   const menu = document.getElementById("menu");
   const hamburger = document.getElementById("hamburger");
 
-  let typingId = null;
-
   function typeText(el, text, speed, onDone) {
-    clearInterval(typingId);
     el.textContent = "";
-    if (reduceMotion) { el.textContent = text; onDone(); return; }
+    if (reduceMotion) {
+      el.textContent = text;
+      if (onDone) onDone();
+      return null;
+    }
     let i = 0;
-    typingId = setInterval(() => {
+    const id = setInterval(() => {
       i++;
       el.textContent = text.slice(0, i);
-      if (i >= text.length) { clearInterval(typingId); onDone(); }
-    }, 55);
+      if (i >= text.length) {
+        clearInterval(id);
+        if (onDone) onDone();
+      }
+    }, speed);
+    return id;
   }
+
+  let panelTypingId = null;
 
   function openPanel(id) {
     const data = content[id];
@@ -50,7 +216,8 @@ document.addEventListener("DOMContentLoaded", () => {
     menu.classList.remove("open");
     hamburger.setAttribute("aria-expanded", "false");
 
-    typeText(panelCmd, data.cmd, 55, () => {
+    clearInterval(panelTypingId);
+    panelTypingId = typeText(panelCmd, data.cmd, 55, () => {
       const pane = document.getElementById("pane-" + id);
       if (pane) pane.classList.add("active");
     });
@@ -75,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("panel-close").addEventListener("click", () => {
     panel.classList.remove("open");
     nodes.forEach(n => n.classList.remove("active"));
-    clearInterval(typingId);
+    clearInterval(panelTypingId);
   });
 
   hamburger.addEventListener("click", () => {
@@ -97,8 +264,9 @@ document.addEventListener("DOMContentLoaded", () => {
     lightboxImg.src = "";
   }
 
-  document.querySelectorAll(".pane-photo, .pane-thumb").forEach(img => {
-    img.addEventListener("click", () => openLightbox(img.src, img.alt));
+  panel.addEventListener("click", (e) => {
+    const img = e.target.closest(".pane-photo, .pane-thumb");
+    if (img) openLightbox(img.src, img.alt);
   });
 
   lightbox.addEventListener("click", (e) => {
@@ -112,11 +280,11 @@ document.addEventListener("DOMContentLoaded", () => {
       panel.classList.remove("open");
       menu.classList.remove("open");
       nodes.forEach(n => n.classList.remove("active"));
-      clearInterval(typingId);
+      clearInterval(panelTypingId);
       closeLightbox();
     }
   });
 
   const statusText = document.getElementById("status-text");
-  typeText(statusText, "click a star to begin", 40, () => {});
+  typeText(statusText, "click a star to begin", 40);
 });

@@ -438,35 +438,6 @@ html, body {
 .form-wrap { display: none; margin-top: 18px; }
 .form-wrap.open { display: block; }
 
-.pane-logo {
-  display: block;
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 16px;
-}
-
-.pane-stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-bottom: 18px;
-}
-
-.pane-stat {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 14px 16px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 10px;
-}
-
-.stat-value { font-size: 26px; font-weight: 700; line-height: 1.1; color: var(--accent); }
-.stat-label { font-size: 12px; color: var(--dim); letter-spacing: 0.3px; }
-
 .panel-pane .pane-button {
   display: block;
   width: fit-content;
@@ -485,6 +456,18 @@ html, body {
   color: var(--text);
   opacity: 0.85;
 }
+
+.pane-item .pane-button { margin-top: 16px; }
+
+.pane-divider {
+  border: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  margin: 0 0 20px;
+}
+
+.panel-pane .pane-detail { margin-bottom: 6px; }
+.detail-label { color: var(--text); font-weight: 700; }
 
 .pane-photo,
 .pane-thumb {
