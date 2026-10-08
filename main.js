@@ -55,9 +55,9 @@ const cardData = {
       imageAlt: "TryHackMe",
       details: [
         { label: "Current Path", value: "SAL1" },
-        { label: "Completed Path", value: "Coming soon..." }
+        { label: "Completed Path", value: "None" }
       ],
-      button: { text: "View TryHackMe profile", href: "YOUR_TRYHACKME_PROFILE_URL" }
+      button: { text: "View TryHackMe profile", href: "https://tryhackme.com/p/vu0ng.tr4nduc" }
     },
     {
       image: "images/comptia_network+.png",
